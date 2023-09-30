@@ -1,13 +1,20 @@
-import { Outlet, createBrowserRouter } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
+import Login from "../components/Login";
+import Registration from "../components/Registration";
+import { createBrowserRouter } from "react-router-dom";
 
 const routes = createBrowserRouter([
     {
         path: '/',
-        element: <div>Hello from Root <Outlet/></div>,
+        element: <MainLayout/>,
         children: [
             {
-                path: '/',
-                element: <div>Hello from Home</div>
+                path: '/login',
+                element: <Login/>,
+            },
+            {
+                path: '/registration',
+                element: <Registration/>,
             }
         ]
     }
